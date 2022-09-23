@@ -16,19 +16,20 @@ namespace _4_1_02
         {
             int[,] array = new int[,]
             {
-                { 1, 2, 3 },
-                { 4, 101, 6 },
-                { 7, 8, 9 }                
+                { 1, 2, 3, 5 },
+                { 4, 101, 6, 5 },
+                { 7, 8, 9, 5},
+                { 10, 11, 12, 6 },
             };
 
             bool flag = false;
             foreach (int i in array)
                 if (i > 100)
                     flag = true;
-
+            if (flag==true)
             for (int i = 0; i < array.GetLength(0); i++)
                 for (int j = 0; j < array.GetLength(1); j++)
-                    if ((flag) || (i == j) || (- i == j-array.GetLength(0)+1))
+                    if ((i == j) || ( - i == j - array.GetLength(0) + 1))
                         array[i, j] = 0;
 
             for (int i = 0; i < array.GetLength(0); i++)
